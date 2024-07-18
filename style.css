@@ -1,3 +1,17 @@
 .animated {
     animation-duration: 1s;
 }
+ /* Custom CSS for responsiveness */
+ @media (max-width: 768px) {
+    .nav-link {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .mobile-menu-open .nav-link {
+        display: block;
+    }
+}
