@@ -9,9 +9,9 @@
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body class="bg-blue-100 flex items-center justify-center min-h-screen">
-    <div class="flex w-full max-w-5xl bg-white rounded-lg shadow-lg" data-aos="flip-right" data-aos-delay="150">
+    <div class="flex flex-col md:flex-row w-full max-w-5xl bg-white rounded-lg shadow-lg" data-aos="flip-right" data-aos-delay="150">
         <!-- Details Section (Left Side) -->
-        <div class="w-1/2 p-8 flex items-center justify-center bg-blue-600 text-white rounded-l-lg">
+        <div class="w-full md:w-1/2 p-8 flex items-center justify-center bg-blue-600 text-white rounded-t-lg md:rounded-t-none md:rounded-l-lg">
             <div>
                 <h1 class="text-4xl font-bold mb-4" data-aos="fade-left">Create Your Account</h1>
                 <p data-aos="fade-left" data-aos-delay="300">Join Summit View School to unlock exclusive learning resources and features. Sign up to start your educational journey.</p>
@@ -19,7 +19,7 @@
         </div>
         
         <!-- Form Section (Right Side) -->
-        <div class="w-1/2 p-8" data-aos="fade-up" data-aos-delay="300">
+        <div class="w-full md:w-1/2 p-8" data-aos="fade-up" data-aos-delay="300">
             <h2 class="text-2xl font-bold text-blue-600 mb-6">Sign Up</h2>
             <div class="text-center mb-4">
                 <i class="fas fa-user fa-3x text-gray-500"></i>
@@ -58,4 +58,6 @@
         });
     </script>
 </body>
+
+
 </html>
