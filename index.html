@@ -9,11 +9,19 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Include AOS css -->
-    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <!-- Include AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- Custom Styles -->
     <style>
-       
+        .counter {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .program-card {
+            background-image: url('your-background-image-url.jpg');
+            background-size: cover;
+            background-position: center;
+        }
     </style>
 </head>
 
@@ -32,11 +40,11 @@
             </button>
             <!-- Navigation links -->
             <div class="hidden md:flex space-x-4 mobile-menu-open">
-                <a href="#aboutUs" class="nav-link text-gray-600 hover:text-gray-800 px-3 py-2 transition duration-300 transform hover:scale-110">About Us</a>
-                <a href="#admissionSection" class="nav-link text-gray-600 hover:text-gray-800 px-3 py-2 transition duration-300 transform hover:scale-110">Admissions</a>
-                <a href="#event" class="nav-link text-gray-600 hover:text-gray-800 px-3 py-2 transition duration-300 transform hover:scale-110">Events</a>
-                <a href="#contacts" class="nav-link text-gray-600 hover:text-gray-800 px-3 py-2 transition duration-300 transform hover:scale-110">Contact</a>
-                <a href="#" class="nav-link text-gray-600 hover:text-gray-800 px-3 py-2 transition duration-300 transform hover:scale-110">News</a>
+                <a href="./Construction Page/construction.html" class="nav-link text-gray-600 hover:text-gray-800 px-3 py-2 transition duration-300 transform hover:scale-110">About Us</a>
+                <a href="./Construction Page/construction.html" class="nav-link text-gray-600 hover:text-gray-800 px-3 py-2 transition duration-300 transform hover:scale-110">Admissions</a>
+                <a href="./Construction Page/construction.html" class="nav-link text-gray-600 hover:text-gray-800 px-3 py-2 transition duration-300 transform hover:scale-110">Events</a>
+                <a href="./Construction Page/construction.html" class="nav-link text-gray-600 hover:text-gray-800 px-3 py-2 transition duration-300 transform hover:scale-110">Contact</a>
+                <a href="./Construction Page/construction.html" class="nav-link text-gray-600 hover:text-gray-800 px-3 py-2 transition duration-300 transform hover:scale-110">News</a>
                 <a href="./Authencation/For Login/login.html" class="nav-link text-gray-600 hover:text-gray-800 px-3 py-2 transition duration-300 transform hover:scale-110">Login</a>
             </div>
         </div>
@@ -44,164 +52,164 @@
 
     <!-- Hero Section -->
     <section class="relative bg-cover bg-center py-20" style="background-image: url('your-image-url.jpg');" data-aos="fade-up">
-        <div class="container mx-auto px-4 text-center relative z-10">
-            <h1 class="text-4xl sm:text-5xl font-bold mb-6 text-white animate__animated animate__fadeIn">Welcome to Summit View School</h1>
-            <p class="text-lg mb-8 max-w-2xl mx-auto text-white animate__animated animate__fadeInUp">Preparing Future Leaders Through Excellence in Education</p>
-            <a href="./Construction Page/construction.html" class="bg-blue-500 text-white rounded-full px-8 py-4 font-semibold hover:bg-blue-600 transition duration-300 animate__animated animate__fadeInUp">Learn More</a>
-        </div>
         <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h1 class="text-4xl sm:text-5xl font-bold mb-6 text-white">Welcome to Summit View School</h1>
+            <p class="text-lg mb-8 max-w-2xl mx-auto text-white">Preparing Future Leaders Through Excellence in Education</p>
+            <a href="./Construction Page/construction.html" class="bg-blue-500 text-white rounded-full px-8 py-4 font-semibold hover:bg-blue-600 transition duration-300">Learn More</a>
+        </div>
     </section>
 
     <!-- About Section -->
     <section id="aboutUs" class="relative bg-cover bg-center py-20" style="background-image: url('your-image-url.jpg');" data-aos="fade-left">
+        <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
         <div class="container mx-auto px-4 text-center relative z-10">
             <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white">About Us</h2>
             <p class="text-lg mb-8 max-w-2xl mx-auto text-white">Summit View School is dedicated to providing a nurturing environment where students can thrive academically and personally.</p>
             <a href="./Construction Page/construction.html" class="bg-yellow-200 text-yellow-800 rounded-full px-8 py-4 font-semibold hover:bg-yellow-300 transition duration-300">Explore Our Programs</a>
         </div>
-        <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
     </section>
 
     <!-- Admission Section -->
     <section id="admissionSection" class="relative bg-cover bg-center py-20" style="background-image: url('your-image-url.jpg');" data-aos="fade-right">
+        <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
         <div class="container mx-auto px-4 text-center relative z-10">
             <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white">Admission</h2>
             <p class="text-lg mb-8 max-w-2xl mx-auto text-white">Join Summit View School to experience an educational journey that fosters academic excellence and personal growth.</p>
             <a href="./Authencation/For Signup/signup.html" class="bg-blue-200 text-blue-800 rounded-full px-8 py-4 font-semibold hover:bg-blue-300 transition duration-300">Apply Now</a>
         </div>
-        <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
     </section>
 
+    <!-- Programs Section   -->
+    <section id="services" class="py-16" style="background-image: url('your-image-url.jpg'); background-size: cover; background-position: center;" data-aos="fade-up">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold mb-4 text-center text-dark" data-aos="fade-up" data-aos-delay="100">Our Programs</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-blue-800 p-6 rounded-lg shadow-lg text-center program-card" data-aos="fade-down" data-aos-delay="200" style="background-color: rgba(255, 255, 255, 0.8);">
+                    <h3 class="text-xl font-semibold mb-2">Innovative Technology</h3>
+                    <p>Explore cutting-edge technology and gain hands-on experience in our comprehensive tech programs.</p>
+                </div>
+                <div class="bg-green-800 p-6 rounded-lg shadow-lg text-center program-card" data-aos="fade-right" data-aos-delay="300" style="background-color: rgba(255, 255, 255, 0.8);">
+                    <h3 class="text-xl font-semibold mb-2">Leadership & Management</h3>
+                    <p>Develop essential leadership skills and managerial expertise to excel in the modern business world.</p>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg text-center program-card" data-aos="fade-up" data-aos-delay="400" style="background-color: rgba(255, 255, 255, 0.8);">
+                    <h3 class="text-xl font-semibold mb-2">Creative Arts</h3>
+                    <p>Unleash your creativity through our diverse programs in visual arts, music, and performing arts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Events Section -->
     <section id="event" class="relative bg-cover bg-center py-20" style="background-image: url('your-image-url.jpg');" data-aos="fade-up">
+        <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
         <div class="container mx-auto px-4 text-center relative z-10">
             <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white">Events</h2>
             <p class="text-lg mb-8 max-w-2xl mx-auto text-white">Stay updated with the latest events and activities happening at Summit View School.</p>
             <a href="./Construction Page/construction.html" class="bg-green-200 text-green-800 rounded-full px-8 py-4 font-semibold hover:bg-green-300 transition duration-300">View Upcoming Events</a>
         </div>
-        <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
     </section>
 
-    <div class="font-sans leading-normal bg-gray-100">
-
-        <!-- Container for the Grid Layout -->
-        
-    </div>
-    
     <!-- Facilities and Resources Section -->
     <section class="relative bg-cover bg-center py-20" style="background-image: url('your-image-url.jpg');" data-aos="flip-right">
+        <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
         <div class="container mx-auto px-4 text-center relative z-10">
             <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white">Facilities and Resources</h2>
-            <p class="text-lg mb-8 max-w-2xl mx-auto text-white">Explore the state-of-the-art facilities and resources available at Summit View School to support student learning and development.</p>
-            <a href="./Construction Page/construction.html" class="bg-blue-200 text-blue-800 rounded-full px-8 py-4 font-semibold hover:bg-blue-300 transition duration-300">Discover More</a>
+            <p class="text-lg mb-8 max-w-2xl mx-auto text-white">Explore the state-of-the-art facilities and resources that support our students' learning experiences.</p>
+            <a href="./Construction Page/construction.html" class="bg-purple-200 text-purple-800 rounded-full px-8 py-4 font-semibold hover:bg-purple-300 transition duration-300">Learn More</a>
         </div>
-        <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
     </section>
 
     <!-- Testimonials Section -->
-    <section class="relative bg-cover bg-center py-20" style="background-image: url('your-image-url.jpg');" data-aos="zoom-in">
-        <div class="container mx-auto px-4 text-center relative z-10">
-            <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white">Testimonials</h2>
-            <div class="max-w-2xl mx-auto text-white">
-                <div class="mb-4">
-                    <p class="text-lg italic">"Summit View School has been instrumental in shaping my child's future. The dedicated faculty and supportive environment have made a significant impact."</p>
-                    <p class="text-sm mt-2">- Parent</p>
-                </div>
-                <div class="mb-4">
-                    <p class="text-lg italic">"I'm grateful for the opportunities Summit View School provided. It's a place where learning is not just about academics but also about personal growth."</p>
-                    <p class="text-sm mt-2">- Alumni</p>
-                </div>
-                <div>
-                    <p class="text-lg italic">"Attending Summit View School has been a transformative experience. The emphasis on critical thinking and creativity prepares students for success."</p>
-                    <p class="text-sm mt-2">- Student</p>
-                </div>
-            </div>
-        </div>
-        <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
-    </section> 
-
-        <!-- Contact Us Section -->
-        <section id="contacts" class="relative bg-cover bg-center py-20" style="background-image: url('your-image-url.jpg');" data-aos="fade-down">
-            <div class="container mx-auto px-4 text-center relative z-10">
-                <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white">Contact Us</h2>
-                <p class="text-lg mb-8 max-w-2xl mx-auto text-white">We are here to assist you with any questions or concerns. Get in touch with Summit View School today.</p>
-                <a href="./Construction Page/construction.html" class="bg-red-200 text-red-800 rounded-full px-8 py-4 font-semibold hover:bg-red-300 transition duration-300">Get in Touch</a>
-            </div>
-            <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
-        </section>
-    
-<!-- Counter Section -->
-<section class="relative bg-cover bg-center py-20" style="background-image: url('your-image-url.jpg');">
+    <section class="relative bg-cover bg-center py-20" style="background-image: url('your-image-url.jpg');" data-aos="fade-left">
+    <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
     <div class="container mx-auto px-4 text-center relative z-10">
-        <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white" data-aos="fade-up">Our Achievements</h2>
-        <div class="flex flex-wrap justify-center gap-8">
-            <div class="w-full md:w-1/3 p-4">
-                <div class="bg-blue-800 p-6 rounded-lg shadow-lg text-white text-center" data-aos="flip-up">
-                    <i class="fas fa-user-graduate fa-3x mb-4"></i>
-                    <h3 class="text-2xl font-bold mb-2" data-count="5460">0</h3>
-                    <p>Graduates</p>
-                </div>
+        <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white">Testimonials</h2>
+        <p class="text-lg mb-8 max-w-2xl mx-auto text-white">Hear from our students and alumni about their experiences at Summit View School.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-gray-800 bg-opacity-80 p-6 rounded-lg shadow-lg text-center" data-aos="flip-left">
+                <p class="text-lg italic text-white">"Summit View School has been instrumental in shaping my child's future. The dedicated faculty and supportive environment have made a significant impact."</p>
+                <p class="text-sm mt-2 text-white">- Parent</p>
             </div>
-            <div class="w-full md:w-1/3 p-4">
-                <div class="bg-yellow-800 p-6 rounded-lg shadow-lg text-white text-center" data-aos="flip-up">
-                    <i class="fas fa-book fa-3x mb-4"></i>
-                    <h3 class="text-2xl font-bold mb-2" data-count="380">0</h3>
-                    <p>Courses</p>
-                </div>
+            <div class="bg-blue-800 bg-opacity-80 p-6 rounded-lg shadow-lg text-center" data-aos="fade-left">
+                <p class="text-lg italic text-white">"I'm grateful for the opportunities Summit View School provided. It's a place where learning is not just about academics but also about personal growth."</p>
+                <p class="text-sm mt-2 text-white">- Alumni</p>
             </div>
-            <div class="w-full md:w-1/3 p-4">
-                <div class="bg-green-800 p-6 rounded-lg shadow-lg text-white text-center" data-aos="flip-up">
-                    <i class="fas fa-chalkboard-teacher fa-3x mb-4"></i>
-                    <h3 class="text-2xl font-bold mb-2" data-count="560">0</h3>
-                    <p>Teachers</p>
-                </div>
+            <div class="bg-green-800 bg-opacity-80 p-6 rounded-lg shadow-lg text-center" data-aos="flip-right">
+                <p class="text-lg italic text-white">"The academic programs and extracurricular activities at Summit View School have helped me excel and achieve my goals."</p>
+                <p class="text-sm mt-2 text-white">- Student</p>
             </div>
         </div>
     </div>
-</section>
+    </section>
 
-        <!-- Footer -->
-        <footer class="bg-gray-200 text-gray-700 py-6">
-        <div class="container mx-auto px-4">
+    <!-- Contact Section -->
+    <section class="relative bg-cover bg-center py-20" style="background-image: url('your-image-url.jpg');" data-aos="fade-up">
+        <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white">Contact Us</h2>
+            <p class="text-lg mb-8 max-w-2xl mx-auto text-white">We'd love to hear from you! Reach out to us for any inquiries or information.</p>
+            <a href="./Construction Page/construction.html" class="bg-red-200 text-red-800 rounded-full px-8 py-4 font-semibold hover:bg-red-300 transition duration-300">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- Counters Section -->
+    <section id="counters" class="bg-gray-100 py-12">
+        <div class="container mx-auto px-4 text-center">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Quick Links -->
-                <div class="mb-4">
-                    <h3 class="text-lg font-semibold mb-2">Quick Links</h3>
-                    <ul class="text-sm">
-                        <li><a href="./Construction Page/construction.html " class="hover:text-gray-900 transition duration-300">About Us</a></li>
-                        <li><a href="./Construction Page/construction.html " class="hover:text-gray-900 transition duration-300">Admissions</a></li>
-                        <li><a href="./Construction Page/construction.html " class="hover:text-gray-900 transition duration-300">Events</a></li>
-                        <li><a href="./Construction Page/construction.html " class="hover:text-gray-900 transition duration-300">Contact</a></li>
-                    </ul>
+                <div class="counter-item" data-aos="fade-up">
+                    <i class="fas fa-school fa-3x text-blue-500"></i>
+                    <div class="counter text-4xl" data-target="387">0</div>
+                    <p class="text-lg font-semibold">Branches</p>
                 </div>
-                <!-- Contact Information -->
-                <div class="mb-4">
-                    <h3 class="text-lg font-semibold mb-2">Contact Information</h3>
-                    <p class="text-sm">123 School Avenue, City, Country</p>
-                    <p class="text-sm">info@summitviewschool.com</p>
-                    <p class="text-sm">+92 311 25 128 21</p>
+                <div class="counter-item" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-user-graduate fa-3x text-green-500"></i>
+                    <div class="counter text-4xl" data-target="8495">0</div>
+                    <p class="text-lg font-semibold">Students</p>
                 </div>
-                <!-- Social Media -->
-                <div class="mb-4">
-                    <h3 class="text-lg font-semibold mb-2">Follow Us</h3>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-600 hover:text-gray-900 transition duration-300"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="text-gray-600 hover:text-gray-900 transition duration-300"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-gray-600 hover:text-gray-900 transition duration-300"><i class="fab fa-instagram"></i></a>
-                    </div>
+                <div class="counter-item" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-book fa-3x text-orange-500"></i>
+                    <div class="counter text-4xl" data-target="36">0</div>
+                    <p class="text-lg font-semibold">Courses</p>
                 </div>
             </div>
-            <div class="mt-8 border-t border-gray-300 pt-4 text-center text-sm">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="text-center md:text-left mb-4 md:mb-0">
                 <p>&copy; 2024 Summit View School. All rights reserved.</p>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="text-white hover:text-gray-400 transition duration-300">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="text-white hover:text-gray-400 transition duration-300">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="text-white hover:text-gray-400 transition duration-300">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="text-white hover:text-gray-400 transition duration-300">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
             </div>
         </div>
     </footer>
 
+    <!-- Include AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Include custom script for counters -->
+    <script>
+        AOS.init();
 
-    <!-- Include AOS script -->
-    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
-    <script src="script.js"></script>
-    
+    </script>
+    <script type="module" src="script.js"></script>
 </body>
 
 </html>

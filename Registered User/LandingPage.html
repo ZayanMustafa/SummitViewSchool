@@ -4,147 +4,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Summit View School</title>
-    <!-- Include Tailwind CSS -->
+    <title>Authentic User Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400&family=Raleway:wght@600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Optional: Include Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Include animate.css for animations -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <!-- Additional custom styles -->
-    <link rel="stylesheet" href="landingPage.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Lora', serif;
+        }
+
+        h1, h2 {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .bg-primary {
+            background-color: #E2725B;
+        }
+
+        .bg-secondary {
+            background-color: #FFFDD0;
+        }
+
+        .text-primary {
+            color: #E2725B;
+        }
+
+        .text-secondary {
+            color: #FFFDD0;
+        }
+
+        .text-charcoal {
+            color: #333333;
+        }
+
+        .bg-sage-green {
+            background-color: #9B9A6C;
+        }
+
+        .icon-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150px;
+            width: 150px;
+            margin: auto;
+            font-size: 3rem;
+        }
+
+        .icon-card {
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .icon-card:hover {
+            color: #FFFDD0;
+        }
+
+        .icon-card.bg-primary:hover {
+            background-color: #C94C4C;
+        }
+
+        .icon-card.bg-sage-green:hover {
+            background-color: #7C7B5F;
+        }
+
+        .icon-card a {
+            display: block;
+            height: 100%;
+            width: 100%;
+            text-decoration: none;
+        }
+    </style>
 </head>
 
-<body class="font-sans leading-normal">
-
-    <!-- Navbar -->
-    <nav class="bg-blue-900 text-white shadow-lg">
-        <div class="container mx-auto px-4 flex justify-between items-center py-4">
-            <div class="flex items-center">
-                <img src="school-icon.png" alt="School Icon" class="h-8 w-8 mr-2">
-                <div class="text-lg font-semibold">Summit View School</div>
-            </div>
-            <!-- Navigation links -->
-            <div class="flex space-x-4 navbar-links">
-                <!-- Removed Announcements and Assignments from navigation -->
-                <a href="#" class="hover:text-gray-300">Dashboard</a>
-                <a href="#" class="hover:text-gray-300">Events</a>
-                <a href="#" class="hover:text-gray-300">Profile</a>
-                <a href="#" class="hover:text-gray-300">Log Out</a>
+<body class="bg-secondary" data-aos-easing="ease" data-aos-duration="800">
+    <nav class="bg-primary text-secondary p-4" data-aos="fade-down">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl">Dashboard</h1>
+            <div>
+                <a href="#" class="text-secondary mx-2">Home</a>
+                <a href="#" class="text-secondary mx-2">Settings</a>
+                <a href="#" class="text-secondary mx-2">Logout</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section (Removed Welcome Section) -->
+    <div class="container mx-auto mt-8">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+            <div class="bg-primary p-6 rounded-lg shadow-lg text-secondary icon-card" data-aos="fade-up" data-aos-delay="100">
+                <a href="my-courses.html">
+                    <div class="icon-container">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="text-center mt-2">My Courses</div>
+                </a>
+            </div>
 
-    <!-- Main Content (Dashboard Section) -->
-    <section class="py-20">
-        <div class="container mx-auto px-4 text-center">
-            <!-- Replace with user's name -->
-            <h1 class="text-4xl sm:text-5xl font-bold mb-6 animate__animated animate__fadeIn">Welcome, User Name</h1>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h2 class="text-2xl font-semibold mb-4">Dashboard</h2>
-                    <p class="text-lg text-gray-700 mb-4">Here you can find your personalized information and
-                        updates.</p>
-                    <a href="#"
-                        class="bg-blue-500 text-white hover:bg-blue-600 rounded-full px-6 py-3 font-semibold transition duration-300 animate__animated animate__fadeInUp">View
-                        Dashboard</a>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h2 class="text-2xl font-semibold mb-4">Upcoming Events</h2>
-                    <p class="text-lg text-gray-700 mb-4">Stay updated with our upcoming school events.</p>
-                    <a href="#"
-                        class="bg-blue-500 text-white hover:bg-blue-600 rounded-full px-6 py-3 font-semibold transition duration-300 animate__animated animate__fadeInUp">View
-                        Events</a>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h2 class="text-2xl font-semibold mb-4">Announcements</h2>
-                    <p class="text-lg text-gray-700 mb-4">Check out the latest announcements from Summit View
-                        School.</p>
-                    <a href="#"
-                        class="bg-blue-500 text-white hover:bg-blue-600 rounded-full px-6 py-3 font-semibold transition duration-300 animate__animated animate__fadeInUp">View
-                        Announcements</a>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h2 class="text-2xl font-semibold mb-4">Assignments</h2>
-                    <p class="text-lg text-gray-700 mb-4">Access your assignments and submission deadlines
-                        here.</p>
-                    <a href="#"
-                        class="bg-blue-500 text-white hover:bg-blue-600 rounded-full px-6 py-3 font-semibold transition duration-300 animate__animated animate__fadeInUp">View
-                        Assignments</a>
-                </div>
+            <div class="bg-sage-green p-6 rounded-lg shadow-lg text-secondary icon-card" data-aos="fade-up" data-aos-delay="200">
+                <a href="assignments.html">
+                    <div class="icon-container">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="text-center mt-2">Assignments</div>
+                </a>
+            </div>
+
+            <div class="bg-primary p-6 rounded-lg shadow-lg text-secondary icon-card" data-aos="fade-up" data-aos-delay="300">
+                <a href="upcoming-events.html">
+                    <div class="icon-container">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="text-center mt-2">Upcoming Events</div>
+                </a>
+            </div>
+
+            <div class="bg-sage-green p-6 rounded-lg shadow-lg text-secondary icon-card" data-aos="fade-up" data-aos-delay="400">
+                <a href="announcements.html">
+                    <div class="icon-container">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <div class="text-center mt-2">Announcements</div>
+                </a>
+            </div>
+
+            <div class="bg-primary p-6 rounded-lg shadow-lg text-secondary icon-card" data-aos="fade-up" data-aos-delay="500">
+                <a href="performance.html">
+                    <div class="icon-container">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="text-center mt-2">My Performance</div>
+                </a>
+            </div>
+
+            <div class="bg-sage-green p-6 rounded-lg shadow-lg text-secondary icon-card" data-aos="fade-up" data-aos-delay="600">
+                <a href="profile.html">
+                    <div class="icon-container">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="text-center mt-2">Profile</div>
+                </a>
+            </div>
+
+            <div class="bg-primary p-6 rounded-lg shadow-lg text-secondary icon-card" data-aos="fade-up" data-aos-delay="700">
+                <a href="apply-new-course.html">
+                    <div class="icon-container">
+                        <i class="fas fa-plus-circle"></i>
+                    </div>
+                    <div class="text-center mt-2">Apply In New Course</div>
+                </a>
+            </div>
+
+            <div class="bg-sage-green p-6 rounded-lg shadow-lg text-secondary icon-card" data-aos="fade-up" data-aos-delay="800">
+                <a href="news.html">
+                    <div class="icon-container">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <div class="text-center mt-2">News</div>
+                </a>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Footer -->
-    <footer class="bg-gray-200 text-gray-700 py-6">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Quick Links -->
-                <div class="mb-4 animate__animated animate__fadeInLeft">
-                    <h3 class="text-lg font-semibold mb-2">Quick Links</h3>
-                    <ul class="text-sm">
-                        <li><a href="#" class="hover:text-gray-600">Dashboard</a></li>
-                        <li><a href="#" class="hover:text-gray-600">Events</a></li>
-                        <li><a href="#" class="hover:text-gray-600">Announcements</a></li>
-                        <li><a href="#" class="hover:text-gray-600">Assignments</a></li>
-                        <li><a href="#" class="hover:text-gray-600">Profile</a></li>
-                        <li><a href="#" class="hover:text-gray-600">Log Out</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact Information -->
-                <div class="mb-4 animate__animated animate__fadeInUp">
-                    <h3 class="text-lg font-semibold mb-2">Contact Us</h3>
-                    <p class="text-sm text-gray-600 mb-2">123 School Street, Educational City, Country</p>
-                    <p class="text-sm text-gray-600 mb-2">Phone: +123 456 7890</p>
-                    <p class="text-sm text-gray-600 mb-2">Email: info@summitviewschool.com</p>
-                </div>
-
-                <!-- About Summit View School -->
-                <div class="mb-4 animate__animated animate__fadeInRight">
-                    <h3 class="text-lg font-semibold mb-2">About Summit View School</h3>
-                    <p class="text-sm text-gray-600 mb-2">Summit View School is dedicated to providing a nurturing
-                        environment where students can thrive academically and personally.</p>
-                    <p class="text-sm text-gray-600 mb-2">We are proud to have:</p>
-                    <ul class="text-sm">
-                        <li>134+ Branches worldwide</li>
-                        <li>85+ Colleges affiliated</li>
-                        <li>38 Universities across educational cities like Tokyo, Helsinki, Seoul, Singapore, Toronto,
-                            and more.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Social Media and Legal -->
-            <div class="mt-8 flex justify-between items-center animate__animated animate__fadeInUp">
-                <!-- Social Media Icons -->
-                <div class="mr-4">
-                    <a href="#" class="text-gray-400 hover:text-gray-600 px-3 py-2"><i
-                            class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-gray-600 px-3 py-2"><i
-                            class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-gray-600 px-3 py-2"><i
-                            class="fab fa-instagram"></i></a>
-                </div>
-
-                <!-- Legal Information -->
-                <div>
-                    <p class="text-sm text-gray-600">&copy; 2024 Summit View School. All rights reserved.</p>
-                </div>
-            </div>
+    <footer class="bg-primary text-secondary p-4 mt-8" >
+        <div class="container mx-auto text-center">
+            &copy; 2024 Authentic User Dashboard
         </div>
     </footer>
 
-    <!-- Tailwind CSS (No JavaScript needed for navbar toggle) -->
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
-    <script type="module" src="landingPage.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
