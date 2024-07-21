@@ -1,30 +1,22 @@
-     // Counter Animation
-     document.addEventListener('DOMContentLoaded', () => {
-        const counters = document.querySelectorAll('.counter');
-        const speed = 200; // Adjust this value to control the speed of the counter animation
 
-        counters.forEach(counter => {
-            const updateCount = () => {
-                const target = +counter.getAttribute('data-target');
-                const count = +counter.innerText;
-                const increment = target / speed;
-
-                if (count < target) {
-                    counter.innerText = Math.ceil(count + increment);
-                    setTimeout(updateCount, 10);
-                } else {
-                    counter.innerText = target;
-                }
-            };
-
-            const handleScroll = () => {
-                const rect = counter.getBoundingClientRect();
-                if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-                    updateCount();
-                    window.removeEventListener('scroll', handleScroll);
-                }
-            };
-
-            window.addEventListener('scroll', handleScroll);
+    AOS.init();
+    // Counter Animation
+       $(window).on('scroll', function() {
+        $('.counter').each(function() {
+            var $this = $(this);
+            var countTo = $this.attr('data-target');
+            if ($(window).scrollTop() + $(window).height() > $this.offset().top && !$this.hasClass('counting')) {
+                $this.addClass('counting');
+                $({ countNum: $this.text() }).animate({ countNum: countTo }, {
+                    duration: 2000,
+                    easing: 'swing',
+                    step: function () {
+                        $this.text(Math.floor(this.countNum));
+                    },
+                    complete: function () {
+                        $this.text(this.countNum);
+                    }
+                });
+            }
         });
-    });
+        }).trigger('scroll');
