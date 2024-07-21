@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.1/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="admin.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <title>Admin Dashboard - Summit View School </title>
-    
+    <link rel="stylesheet" href="admin.css">
+    <title>Admin Dashboard - Summit View School</title>
 </head>
 <body class="bg-light-grey font-sans leading-normal">
 
@@ -28,77 +28,139 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="bg-dark-green text-white py-16 md:py-20 text-center" data-aos="fade-down">
+      <!-- Hero Section -->
+      <section class="bg-dark-green text-white py-16 md:py-20 text-center" data-aos="fade-down">
         <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">Welcome to the Admin Dashboard</h1>
         <p class="text-base md:text-lg lg:text-xl mb-6 md:mb-8">Manage your school efficiently with the following tools.</p>
     </section>
 
-    <!-- Dashboard Section -->
-    <section id="dashboard" class="py-16 md:py-20 text-center" data-aos="fade-up">
-        <div class="container mx-auto px-4">
-            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">Dashboard</h2>
-            <p class="text-base md:text-lg mb-6 md:mb-8">Overview of all important metrics and activities.</p>
-            <a href="#" class="bg-gold text-dark-green rounded-full px-6 py-3 md:px-8 md:py-4 font-semibold hover:bg-dark-green hover:text-white transition duration-300">Go to Dashboard</a>
-        </div>
-    </section>
+    <!-- Main Content -->
+    <div class="main-container container mx-auto py-16">
+        <!-- Main Content Area -->
+        <div class="main-content flex-1">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="py-16 md:py-20 text-center" data-aos="fade-up">
+                <div>
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">Dashboard</h2>
+                    <p class="text-base md:text-lg mb-6 md:mb-8">Overview of all important metrics and activities.</p>
+                    <a href="#" class="bg-gold text-dark-green rounded-full px-6 py-3 md:px-8 md:py-4 font-semibold hover:bg-dark-green hover:text-white transition duration-300">Go to Dashboard</a>
+                </div>
+            </section>
 
-    <!-- Manage Courses Section -->
-    <section id="manageCourses" class="py-16 md:py-20 bg-light-grey text-center" data-aos="fade-right">
-        <div class="container mx-auto px-4">
-            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 text-dark-green">Manage Courses</h2>
-            <p class="text-base md:text-lg mb-6 md:mb-8">Add, edit, and manage courses offered by the school.</p>
-            <a href="#" class="bg-gold text-dark-green rounded-full px-6 py-3 md:px-8 md:py-4 font-semibold hover:bg-dark-green hover:text-white transition duration-300">Manage Courses</a>
-        </div>
-    </section>
+            <!-- Manage Courses Section -->
+            <section id="manageCourses" class="py-16 md:py-20 bg-light-grey text-center" data-aos="fade-right">
+                <div>
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 text-dark-green">Manage Courses</h2>
+                    <p class="text-base md:text-lg mb-6 md:mb-8">Add, edit, and manage courses offered by the school.</p>
+                    <a href="#" class="bg-gold text-dark-green rounded-full px-6 py-3 md:px-8 md:py-4 font-semibold hover:bg-dark-green hover:text-white transition duration-300">Manage Courses</a>
+                </div>
+            </section>
 
-    <!-- Manage Events Section -->
-    <section id="manageEvents" class="py-16 md:py-20 text-center" data-aos="fade-left">
-        <div class="container mx-auto px-4">
-            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">Manage Events</h2>
-            <p class="text-base md:text-lg mb-6 md:mb-8">Organize and oversee events within the school.</p>
-            <a href="#" class="bg-gold text-dark-green rounded-full px-6 py-3 md:px-8 md:py-4 font-semibold hover:bg-dark-green hover:text-white transition duration-300">Manage Events</a>
-        </div>
-    </section>
+            <!-- Manage Events Section -->
+            <section id="manageEvents" class="py-16 md:py-20 text-center" data-aos="fade-left">
+                <div>
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">Manage Events</h2>
+                    <div class="flex flex-wrap gap-8 justify-center max-w-4xl mx-auto">
+                        <!-- Latest Event Card -->
+                        <div class="bg-green-500 text-dark shadow-lg rounded-lg overflow-hidden w-full max-w-sm" data-aos="fade-right">
+                            <div class="p-4">
+                                <i class="fas fa-calendar-day text-3xl"></i>
+                                <h2 class="text-2xl font-semibold mt-2">Latest Event</h2>
+                                <p class="text-white mt-2">Details about the latest event will go here. Include date, location, and a brief description.</p>
+                            </div>
+                        </div>
 
-    <!-- Manage Announcements Section -->
-    <section id="manageAnnouncements" class="py-16 md:py-20 bg-light-grey text-center" data-aos="fade-up">
-        <div class="container mx-auto px-4">
-            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 text-dark-green">Manage Announcements</h2>
-            <p class="text-base md:text-lg mb-6 md:mb-8">Post and manage important announcements for the school community.</p>
-            <a href="#" class="bg-gold text-dark-green rounded-full px-6 py-3 md:px-8 md:py-4 font-semibold hover:bg-dark-green hover:text-white transition duration-300">Manage Announcements</a>
-        </div>
-    </section>
+                        <!-- Add New Event Card -->
+                        <div class="bg-yellow-500 text-black shadow-lg rounded-lg overflow-hidden w-full max-w-sm" data-aos="fade-left">
+                            <div class="p-4 text-center">
+                                <i class="fas fa-plus-circle text-3xl"></i>
+                                <h2 class="text-2xl font-semibold mt-2">Add New Event</h2>
+                                <p class="text-black mt-2">Click here to add a new event to the calendar.</p>
+                                <a href="#" class="inline-block mt-4 py-2 px-4 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700">Add Event +</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-    <!-- Reports and Analytics Section -->
-    <section id="reportsAnalytics" class="py-16 md:py-20 text-center" data-aos="fade-right">
-        <div class="container mx-auto px-4">
-            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">Reports and Analytics</h2>
-            <p class="text-base md:text-lg mb-6 md:mb-8">View detailed reports and analytics to track school performance.</p>
-            <a href="#" class="bg-gold text-dark-green rounded-full px-6 py-3 md:px-8 md:py-4 font-semibold hover:bg-dark-green hover:text-white transition duration-300">View Reports</a>
-        </div>
-    </section>
+            <!-- Manage Announcements Section -->
+            <section id="manageAnnouncements" class="py-16 md:py-20 bg-light-grey text-dark-green text-center" data-aos="fade-up">
+                <div>
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 " >Manage Announcements</h2>
+                    <div class="flex flex-wrap gap-8 justify-center max-w-4xl mx-auto text-dark">
+                        <!-- Latest Announcement Card -->
+                        <div class="bg-blue-500 text-dark shadow-lg rounded-lg overflow-hidden w-full max-w-sm" data-aos="fade-right">
+                            <div class="p-4">
+                                <i class="fas fa-newspaper text-3xl"></i>
+                                <h2 class="text-2xl font-semibold mt-2">Latest Announcement</h2>
+                                <p class="text-dark mt-2">Details about the latest announcement will go here. Include headline, date, and a brief description.</p>
+                            </div>
+                        </div>
 
-    <!-- Financial Management Section -->
-    <section id="financialManagement" class="py-16 md:py-20 text-center" data-aos="fade-up">
-        <div class="container mx-auto px-4">
-            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">Financial Management</h2>
-            <p class="text-base md:text-lg mb-6 md:mb-8">Oversee financial transactions and budgeting.</p>
-            <a href="#" class="bg-gold text-dark-green rounded-full px-6 py-3 md:px-8 md:py-4 font-semibold hover:bg-dark-green hover:text-white transition duration-300">Manage Finances</a>
-        </div>
-    </section>
+                        <!-- Add New Announcement Card -->
+                        <div class="bg-blue-1000 text-dark shadow-lg rounded-lg overflow-hidden w-full max-w-sm" 
+                        data-aos="flip-left"
+                        data-aos-easing="ease-out-cubic"
+                        data-aos-duration="2000">
+                            <div class="p-4 text-center" style="background-color: brown;">
+                                <i class="fas fa-plus-circle text-3xl" style="color: white;"></i>
+                                <h2 class="text-2xl font-semibold mt-2" style="color: white;">Add New Announcement</h2>
+                                <p class="text-white mt-2">Click here to add a new announcement to the website.</p>
+                                <a href="#" class="inline-block mt-4 py-2 px-4 text-white rounded-lg" >Add Announcement +</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-    <!-- Student Attendance Section -->
-    <section id="studentAttendance" class="py-16 md:py-20 bg-light-grey text-center" data-aos="fade-left">
-        <div class="container mx-auto px-4">
-            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 text-dark-green">Student Attendance</h2>
-            <p class="text-base md:text-lg mb-6 md:mb-8">Track and manage student attendance records.</p>
-            <a href="#" class="bg-gold text-dark-green rounded-full px-6 py-3 md:px-8 md:py-4 font-semibold hover:bg-dark-green hover:text-white transition duration-300">Manage Attendance</a>
+            <!-- Reports and Analytics Section -->
+            <section id="reportsAnalytics" class="py-16 md:py-20 text-center" data-aos="fade-right">
+                <div>
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">Reports and Analytics</h2>
+                    <p class="text-base md:text-lg mb-6 md:mb-8">View detailed reports and analytics to track school performance.</p>
+                    <a href="#" class="bg-gold text-dark-green rounded-full px-6 py-3 md:px-8 md:py-4 font-semibold hover:bg-dark-green hover:text-white transition duration-300">View Reports</a>
+                </div>
+            </section>
+
+            <!-- Financial Management Section -->
+            <section id="financialManagement" class="py-16 md:py-20 text-center" data-aos="fade-up">
+                <div>
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">Financial Management</h2>
+                    <p class="text-base md:text-lg mb-6 md:mb-8">Oversee financial transactions and budgeting.</p>
+                    <a href="#" class="bg-gold text-dark-green rounded-full px-6 py-3 md:px-8 md:py-4 font-semibold hover:bg-dark-green hover:text-white transition duration-300">Manage Finances</a>
+                </div>
+            </section>
+
+            <!-- Student Attendance Section -->
+            <section id="studentAttendance" class="py-16 md:py-20 bg-light-grey text-center" data-aos="fade-left">
+                <div>
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 text-dark-green">Student Attendance</h2>
+                    <p class="text-base md:text-lg mb-6 md:mb-8">Track and manage student attendance records.</p>
+                    <a href="#" class="bg-gold text-dark-green rounded-full px-6 py-3 md:px-8 md:py-4 font-semibold hover:bg-dark-green hover:text-white transition duration-300">Manage Attendance</a>
+                </div>
+            </section>
         </div>
-    </section>
+
+        <!-- Right Sidebar -->
+        <div class="right-sidebar" data-aos="fade-left">
+            <h3 class="text-lg font-bold mb-4">Quick Stats</h3>
+            <div class="sidebar-item">
+                <i class="fas fa-file-alt"></i>
+                <span>Applications: <strong>125</strong></span>
+            </div>
+            <div class="sidebar-item">
+                <i class="fas fa-user-graduate"></i>
+                <span>Students: <strong>8,569</strong></span>
+            </div>
+            <div class="sidebar-item">
+                <i class="fas fa-calendar"></i>
+                <span>Upcoming Event: <strong>12/12/2024</strong></span>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
-    <footer class="bg-dark-green text-white py-6 text-center">
+    <footer class="bg-dark-green text-dark py-7 text-center">
         <div class="container mx-auto">
             <p>&copy; 2024 Summit View School. All rights reserved.</p>
         </div>
