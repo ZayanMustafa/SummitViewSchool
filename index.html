@@ -9,16 +9,23 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Flowbite CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.0/flowbite.min.css" rel="stylesheet">
     <!-- Include AOS CSS -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <!-- Custom Styles -->
-     <link rel="stylesheet" href="style.css">
-    
+    <style>
+        .counter {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .program-card {
+            background-image: url('your-background-image-url.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
 </head>
 
-<body class="bg-white font-sans leading-normal ">
+<body class="bg-white font-sans leading-normal">
 
     <!-- Navbar -->
     <nav class="bg-blue-200 shadow-lg">
@@ -41,17 +48,8 @@
                 <a href="./Authencation/For Login/login.html" class="nav-link text-gray-600 hover:text-gray-800 px-3 py-2 transition duration-300 transform hover:scale-110">Login</a>
             </div>
         </div>
-        <!-- Mobile Menu -->
-        <div class="hidden mobile-menu md:hidden">
-            <a href="./Construction Page/construction.html" class="block px-4 py-2 text-gray-600 hover:text-gray-800">About Us</a>
-            <a href="./Construction Page/construction.html" class="block px-4 py-2 text-gray-600 hover:text-gray-800">Admissions</a>
-            <a href="./Construction Page/construction.html" class="block px-4 py-2 text-gray-600 hover:text-gray-800">Events</a>
-            <a href="./Construction Page/construction.html" class="block px-4 py-2 text-gray-600 hover:text-gray-800">Contact</a>
-            <a href="./Construction Page/construction.html" class="block px-4 py-2 text-gray-600 hover:text-gray-800">News</a>
-            <a href="./Authencation/For Login/login.html" class="block px-4 py-2 text-gray-600 hover:text-gray-800">Login</a>
-        </div>
     </nav>
-    
+
     <!-- Hero Section -->
     <section class="relative bg-cover bg-center py-20" style="background-image: url('your-image-url.jpg');" data-aos="fade-up">
         <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
@@ -82,27 +80,26 @@
         </div>
     </section>
 
-    <!-- Programs Section   -->
     <section id="services" class="py-16" style="background-image: url('your-image-url.jpg'); background-size: cover; background-position: center;" data-aos="fade-up">
         <div class="container mx-auto">
             <h2 class="text-3xl font-bold mb-4 text-center text-dark" data-aos="fade-up" data-aos-delay="100">Our Programs</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-blue-800 p-6 rounded-lg shadow-lg text-center program-card" data-aos="fade-down" data-aos-delay="200" style="background-color: rgba(255, 255, 255, 0.8);">
+                <div class="bg-gray-200 p-6 rounded-lg shadow-lg text-center program-card" data-aos="fade-down" data-aos-delay="200" style="background-color: rgba(255, 255, 255, 0.8);">
                     <h3 class="text-xl font-semibold mb-2">Innovative Technology</h3>
                     <p>Explore cutting-edge technology and gain hands-on experience in our comprehensive tech programs.</p>
                 </div>
-                <div class="bg-green-800 p-6 rounded-lg shadow-lg text-center program-card" data-aos="fade-right" data-aos-delay="300" style="background-color: rgba(255, 255, 255, 0.8);">
+                <div class="bg-gray-200 p-6 rounded-lg shadow-lg text-center program-card" data-aos="fade-right" data-aos-delay="300" style="background-color: rgba(255, 255, 255, 0.8);">
                     <h3 class="text-xl font-semibold mb-2">Leadership & Management</h3>
                     <p>Develop essential leadership skills and managerial expertise to excel in the modern business world.</p>
                 </div>
-                <div class="bg-gray-700 p-6 rounded-lg shadow-lg text-center program-card" data-aos="fade-up" data-aos-delay="400" style="background-color: rgba(255, 255, 255, 0.8);">
+                <div class="bg-gray-200 p-6 rounded-lg shadow-lg text-center program-card" data-aos="fade-up" data-aos-delay="400" style="background-color: rgba(255, 255, 255, 0.8);">
                     <h3 class="text-xl font-semibold mb-2">Creative Arts</h3>
                     <p>Unleash your creativity through our diverse programs in visual arts, music, and performing arts.</p>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Events Section -->
     <section id="event" class="relative bg-cover bg-center py-20" style="background-image: url('your-image-url.jpg');" data-aos="fade-up">
         <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
@@ -210,8 +207,27 @@
     <script>
         AOS.init();
 
+        // Counter Animation
+        $(window).on('scroll', function() {
+            $('.counter').each(function() {
+                var $this = $(this);
+                var countTo = $this.attr('data-target');
+                if ($(window).scrollTop() + $(window).height() > $this.offset().top && !$this.hasClass('counting')) {
+                    $this.addClass('counting');
+                    $({ countNum: $this.text() }).animate({ countNum: countTo }, {
+                        duration: 2000,
+                        easing: 'swing',
+                        step: function () {
+                            $this.text(Math.floor(this.countNum));
+                        },
+                        complete: function () {
+                            $this.text(this.countNum);
+                        }
+                    });
+                }
+            });
+        }).trigger('scroll');
     </script>
-    <script type="module" src="script.js"></script>
 </body>
 
 </html>
