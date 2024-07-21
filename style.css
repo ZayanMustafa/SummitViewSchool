@@ -1,17 +1,9 @@
-.animated {
-    animation-duration: 1s;
+.counter {
+    font-size: 2rem;
+    font-weight: bold;
 }
- /* Custom CSS for responsiveness */
- @media (max-width: 768px) {
-    .nav-link {
-        display: none;
-    }
-
-    .mobile-menu-btn {
-        display: block;
-    }
-
-    .mobile-menu-open .nav-link {
-        display: block;
-    }
+.program-card {
+    background-image: url('your-background-image-url.jpg');
+    background-size: cover;
+    background-position: center;
 }

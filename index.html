@@ -9,23 +9,16 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Flowbite CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.0/flowbite.min.css" rel="stylesheet">
     <!-- Include AOS CSS -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <!-- Custom Styles -->
-    <style>
-        .counter {
-            font-size: 2rem;
-            font-weight: bold;
-        }
-        .program-card {
-            background-image: url('your-background-image-url.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-    </style>
+     <link rel="stylesheet" href="style.css">
+    
 </head>
 
-<body class="bg-white font-sans leading-normal">
+<body class="bg-white font-sans leading-normal ">
 
     <!-- Navbar -->
     <nav class="bg-blue-200 shadow-lg">
@@ -48,8 +41,17 @@
                 <a href="./Authencation/For Login/login.html" class="nav-link text-gray-600 hover:text-gray-800 px-3 py-2 transition duration-300 transform hover:scale-110">Login</a>
             </div>
         </div>
+        <!-- Mobile Menu -->
+        <div class="hidden mobile-menu md:hidden">
+            <a href="./Construction Page/construction.html" class="block px-4 py-2 text-gray-600 hover:text-gray-800">About Us</a>
+            <a href="./Construction Page/construction.html" class="block px-4 py-2 text-gray-600 hover:text-gray-800">Admissions</a>
+            <a href="./Construction Page/construction.html" class="block px-4 py-2 text-gray-600 hover:text-gray-800">Events</a>
+            <a href="./Construction Page/construction.html" class="block px-4 py-2 text-gray-600 hover:text-gray-800">Contact</a>
+            <a href="./Construction Page/construction.html" class="block px-4 py-2 text-gray-600 hover:text-gray-800">News</a>
+            <a href="./Authencation/For Login/login.html" class="block px-4 py-2 text-gray-600 hover:text-gray-800">Login</a>
+        </div>
     </nav>
-
+    
     <!-- Hero Section -->
     <section class="relative bg-cover bg-center py-20" style="background-image: url('your-image-url.jpg');" data-aos="fade-up">
         <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
