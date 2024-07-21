@@ -1,0 +1,73 @@
+body {
+    background-image: url('your-background-image.jpg'); /* Replace with your background image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Open Sans', sans-serif; /* Default font for body */
+  }
+  .primary-bg {
+    background-color: #1E3A8A; /* Blue */
+  }
+  .secondary-bg-green {
+    background-color: #10B981; /* Green */
+  }
+  .secondary-bg-purple {
+    background-color: #6D28D9; /* Purple */
+  }
+  .accent-bg-red {
+    background-color: #EF4444; /* Red */
+  }
+  .accent-bg-teal {
+    background-color: #14B8A6; /* Teal */
+  }
+  .neutral-gray {
+    background-color: #9CA3AF; /* Gray */
+  }
+  .text-primary {
+    color: #1E3A8A; /* Blue */
+  }
+  .text-accent-teal {
+    color: #06685c; /* Teal */
+  }
+  .text-neutral-gray {
+    color: #4d4f52; /* Gray */
+  }
+  .font-primary {
+    font-family: 'Roboto', sans-serif; /* Font for headings and buttons */
+  }
+  .font-secondary {
+    font-family: 'Open Sans', sans-serif; /* Font for body text */
+  }
+
+    .card1:hover{
+    background-color: #23b6cf;
+    color: white !important;    
+    }
+    .card2:hover{
+    background-color: #44e975;
+    color: white !important;
+    }  
+    .card3:hover{
+    background-color: #ec895a;
+    color: white !important;
+    } 
+    .card4:hover{
+    background-color: #e46cca;
+    color: white !important;
+    } 
+    .card5:hover{
+    background-color: #dfdd62;
+    color: white !important;
+    }
+    .card6:hover{
+    background-color: #025ff5;
+    color: white !important;
+  }
+  .card7:hover{
+    background-color: #3ec732ad;
+    color: white !important;
+  }
+  .card8:hover{
+    background-color: #272525d2;
+    color: white !important;
+}
