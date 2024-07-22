@@ -1,6 +1,5 @@
-
-
-
+// Import firebase  
+import { getAuth , createUserWithEmailAndPassword } from "../../Firebase Auth/firebase.js";
 
 
 // Import elements from html
@@ -16,6 +15,18 @@ const userName = userFirstName + userLastName
 const SignUpBtn = document.getElementById("signUp")
 const SignUpGoogleBtn = document.getElementById("googleSignUp")
 
-SignUpBtn.addEventListener( "click" , ()=>{alert(856)})
+SignUpBtn.addEventListener( "click" , createUserWithEmailAndPassword())
 
-SignUpBtn.addEventListener( "click" , ()=>{alert(856)})
+funcation createUserWithEmailAndPassword(){
+    createUserWithEmailAndPassword(auth, userEmail.value, userPassword.value)
+  .then((userCredential) => {
+    // Signed up 
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorMessage)
+});
+}
