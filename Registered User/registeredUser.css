@@ -71,3 +71,7 @@ body {
     background-color: #272525d2;
     color: white !important;
 }
+.card9:hover{
+  background-color: #e42121d2;
+  color: white !important;
+}
