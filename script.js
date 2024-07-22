@@ -14,7 +14,7 @@ import{ getAuth , onAuthStateChanged } from "./Firebase Auth/firebase.js"
            console.log("User is not hear")
             // User is signed out
             // ...
-           window.location.href = '/index.html';
+          //  window.location.href = '/index.html';
 
           }
         });

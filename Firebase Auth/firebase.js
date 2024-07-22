@@ -2,7 +2,8 @@
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-analytics.js";
   import { getAuth ,
-    onAuthStateChanged,
+           onAuthStateChanged,
+           signOut,
           } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
 
   // TODO: Add SDKs for Firebase products that you want to use
@@ -31,6 +32,8 @@
 
 // Export From FireBase 
 export{
+  auth,
   getAuth,
   onAuthStateChanged,
+  signOut,
 }

@@ -16,5 +16,6 @@ const userName = userFirstName + userLastName
 const SignUpBtn = document.getElementById("signUp")
 const SignUpGoogleBtn = document.getElementById("googleSignUp")
 
-SignUpGoogleBtn.addEventListener( "click" , ()=>{alert(856)})
+SignUpBtn.addEventListener( "click" , ()=>{alert(856)})
+
 SignUpBtn.addEventListener( "click" , ()=>{alert(856)})
