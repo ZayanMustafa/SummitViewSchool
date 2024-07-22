@@ -24,3 +24,12 @@
     background-size: cover;
     background-position: center;
 }
+.counter {
+    font-size: 2rem;
+    font-weight: bold;
+}
+.program-card {
+    background-image: url('your-background-image-url.jpg');
+    background-size: cover;
+    background-position: center;
+}
