@@ -14,9 +14,11 @@ signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
+    window.href.location = "../../Registered User / registeredUser.html"
     // ...
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
+    alert(errorMessage)
   });
