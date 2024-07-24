@@ -15,13 +15,11 @@ function signIn (){
   signInWithEmailAndPassword(auth, email.value, password.value)
   .then((userCredential) => {
     // Signed in 
-    // Redirect to index.html
-      window.location.href = "../../index.html"
+    window.location.href = "../Registered User/registeredUser.html";
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
     alert(errorMessage)
   });
-
 }
