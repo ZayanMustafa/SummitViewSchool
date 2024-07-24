@@ -26,6 +26,7 @@
   console.log(app)
 
 
+  
   const auth = getAuth();
   const user = auth.currentUser;
 

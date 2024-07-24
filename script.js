@@ -17,5 +17,5 @@ import{ getAuth , onAuthStateChanged } from "./Firebase Auth/firebase.js"
           //  window.location.href = '/index.html';
 
           }
-        });
+         });
         
