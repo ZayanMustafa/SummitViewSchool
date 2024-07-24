@@ -13,6 +13,7 @@ signUpBtn.addEventListener("click", createUserAccount);
 
 async function createUserAccount() {
     try {
+        
         // Create user with email and password
         const userCredential = await createUserWithEmailAndPassword(auth, userEmail.value, userPassword.value);
         
