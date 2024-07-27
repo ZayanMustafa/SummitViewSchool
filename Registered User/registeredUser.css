@@ -4,6 +4,7 @@ body {
     background-position: center;
     background-attachment: fixed;
     font-family: 'Open Sans', sans-serif; 
+    width: fit-content !important;
   }
   .primary-bg {
     background-color: #1E3A8A; /* Blue */

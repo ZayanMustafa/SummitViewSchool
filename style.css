@@ -1,5 +1,5 @@
 body{
-    width: fit-content !important;
+    overflow-x: hidden !important;
 }
 .counter {
     font-size: 2rem;
