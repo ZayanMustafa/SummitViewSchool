@@ -9,8 +9,17 @@
             signInWithEmailAndPassword,
             signOut,
           } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
- 
-          
+  import { getStorage,
+           ref,
+           uploadBytes,
+           getDownloadURL
+         } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-storage.js";
+  import { getFirestore,
+           collection,
+           addDoc,
+           getDocs } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";   
+
+   
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyAkQtQsZ6VoJEfa86G_NaCPK-cmXdOv5Iw",
@@ -32,6 +41,7 @@ const provider = new GoogleAuthProvider();
 
 // Export Firebase services and methods
 export {
+  // Authencation
   auth,
   provider,
   createUserWithEmailAndPassword,
@@ -39,5 +49,15 @@ export {
   signInWithPopup,
   signInWithEmailAndPassword,
   onAuthStateChanged,
-  signOut
+  signOut,
+  // Storage
+  getStorage,
+  ref,
+  uploadBytes,
+  getDownloadURL,
+  // DataBase
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs
 };
