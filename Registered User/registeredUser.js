@@ -1,7 +1,6 @@
 // Import fireBase 
 import { getAuth , signOut } from "../Firebase Auth/firebase.js"
 
-
 // Import Elements from html 
 document.getElementById('logOutBtn').addEventListener('click', () => {
     const auth = getAuth();

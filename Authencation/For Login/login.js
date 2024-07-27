@@ -14,8 +14,12 @@ logInBtn.addEventListener("click" , signIn)
 function signIn (){
   signInWithEmailAndPassword(auth, email.value, password.value)
   .then((userCredential) => {
-    // Signed in 
-    window.location.href = "../Registered User/registeredUser.html";
+      if(email.value === "admin@gmail.com"){
+      window.location.href = "../../Admin/admin.html";
+      }else {
+      // Signed in 
+      window.location.href = "../../Registered User/registeredUser.html";
+      }
   })
   .catch((error) => {
     const errorCode = error.code;

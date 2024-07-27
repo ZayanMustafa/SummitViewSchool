@@ -9,6 +9,7 @@
           signInWithEmailAndPassword,
           signOut,
           } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
+          
 
   const firebaseConfig = {
     apiKey: "AIzaSyAkQtQsZ6VoJEfa86G_NaCPK-cmXdOv5Iw",
