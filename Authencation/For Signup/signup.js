@@ -1,16 +1,10 @@
 // Import Firebase methods and elements
 import {
-    // Storage
     getStorage,
+    storage,
     ref,
     uploadBytes,
     getDownloadURL,
-    // DataBase
-    db,
-    doc,
-    setDoc,
-    addDoc,
-    // Authentication
     createUserWithEmailAndPassword,
     auth,
     provider,
@@ -30,35 +24,30 @@ const loadingSpinner = document.getElementById("loadingSpinner");
 const signUpBtn = document.getElementById("signUp");
 const googleSignUp = document.getElementById("googleSignUpBtn");
 
-// Variable to store the uploaded image URL
-let profileImageURL = "";
-
 // Event listener to show the file input when the profile icon is clicked
 profileContainer.addEventListener("click", () => {
     profilePicture.click();
 });
 
-// Event listener for profile picture change
 profilePicture.addEventListener("change", async (event) => {
     const file = event.target.files[0];
     if (file) {
-        const storageRef = ref(getStorage(), 'userProfilePictures/' + file.name);
+        const storageRef = ref(storage, 'profilePictures/' + file.name);
         try {
             loadingSpinner.classList.remove("hidden");
             profileIcon.classList.add("hidden");
 
             await uploadBytes(storageRef, file);
-            profileImageURL = await getDownloadURL(storageRef);
-            console.log(profileImageURL);
+            const downloadURL = await getDownloadURL(storageRef);
 
             loadingSpinner.classList.add("hidden");
+
             profileImage.classList.remove("hidden");
-            profileImage.src = profileImageURL;
+            profileImage.src = downloadURL;
         } catch (error) {
             loadingSpinner.classList.add("hidden");
             profileIcon.classList.remove("hidden");
             console.error('Error uploading file:', error);
-            alert('Error uploading file: ' + error.message);
         }
     }
 });
@@ -67,51 +56,28 @@ profilePicture.addEventListener("change", async (event) => {
 signUpBtn.addEventListener("click", createUserAccount);
 
 async function createUserAccount() {
-    if (userFirstName.value !== "" &&
-        userLastName.value !== "" &&
-        userEmail.value !== "" &&
-        userPassword.value !== "") {
-        try {
-            signUpBtn.innerText = "Creating Account...";
-            signUpBtn.disabled = true;
+    try {
+        signUpBtn.innerText = "Account Creating...";
+        signUpBtn.disabled = true;
 
-            // Create user with email and password
-            const userCredential = await createUserWithEmailAndPassword(auth, userEmail.value, userPassword.value);
-            const user = userCredential.user;
+        const userCredential = await createUserWithEmailAndPassword(auth, userEmail.value, userPassword.value);
+        const user = userCredential.user;
 
-            // Save user data to Firestore including profile image URL
-            const userFullName = `${userFirstName.value} ${userLastName.value}`;
+        const fullName = `${userFirstName.value} ${userLastName.value}`;
 
-            const userDoc = {
-                fullName: userFullName,
-                email: userEmail.value,
-                profileImageURL: profileImageURL
-            };
+        window.location.href = "../../Authencation/For Login/login.html";
+    } catch (error) {
+        alert("Error In making Account: " + error.message);
 
-            console.log("User data to save:", userDoc);
+        userFirstName.value = "";
+        userLastName.value = "";
+        userEmail.value = "";
+        userPassword.value = "";
 
-            await setDoc(doc(db, "users", user.uid), userDoc);
-
-            console.log("User document successfully written!");
-
-            window.location.href = "../../Authencation/For Login/login.html";
-        } catch (error) {
-            console.error("Error writing document:", error);
-            alert("Error creating account: " + error.message);
-
-            userFirstName.value = "";
-            userLastName.value = "";
-            userEmail.value = "";
-            userPassword.value = "";
-
-            signUpBtn.innerText = "Sign Up";
-            signUpBtn.disabled = false;
-        }
-    } else {
-        alert("Please fill out the entire form before submitting.");
+        signUpBtn.innerText = "Sign Up";
+        signUpBtn.disabled = false;
     }
 }
-
 
 // Handle Google Sign-In
 googleSignUp.addEventListener("click", signUpWithGoogle);
@@ -126,8 +92,7 @@ async function signUpWithGoogle() {
         console.log('User:', user);
         console.log('Token:', token);
 
-        // Optionally redirect to another page or save user data to Firestore here
     } catch (error) {
-        alert(`Error signing in with Google: ${error.message}`);
+        alert(`Error: ${error.message}`);
     }
 }
