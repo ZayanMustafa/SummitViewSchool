@@ -16,6 +16,8 @@
          } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-storage.js";
   import { getFirestore,
            collection,
+           doc,
+           setDoc,
            addDoc,
            getDocs } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";   
 
@@ -34,6 +36,7 @@ const firebaseConfig = {
 // Initialize Firebase
  const app = initializeApp(firebaseConfig);
  const analytics = getAnalytics(app);
+ const storage = getStorage(app);
  const db = getFirestore(app);
  const auth = getAuth(app);
  const provider = new GoogleAuthProvider();
@@ -43,9 +46,9 @@ export {
   // Authencation
   app,
   analytics,
-  getAuth,
   auth,
   provider,
+  getAuth,
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
@@ -53,6 +56,7 @@ export {
   onAuthStateChanged,
   signOut,
   // Storage
+  storage,
   getStorage,
   ref,
   uploadBytes,
@@ -61,6 +65,8 @@ export {
   db,
   getFirestore,
   collection,
+  doc,
+  setDoc,
   addDoc,
   getDocs
 };
