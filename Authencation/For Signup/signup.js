@@ -2,7 +2,6 @@
 import {
     // Storage
     getStorage,
-    storage,
     ref,
     uploadBytes,
     getDownloadURL,
@@ -11,13 +10,12 @@ import {
     doc,
     setDoc,
     addDoc,
-    // Authencation
+    // Authentication
     createUserWithEmailAndPassword,
     auth,
     provider,
     signInWithPopup
 } from "../../Firebase Auth/firebase.js";
-
 
 // Import elements from HTML
 const userFirstName = document.getElementById("firstName");
@@ -52,14 +50,15 @@ profilePicture.addEventListener("change", async (event) => {
             await uploadBytes(storageRef, file);
             profileImageURL = await getDownloadURL(storageRef);
             console.log(profileImageURL);
-            loadingSpinner.classList.add("hidden");
 
+            loadingSpinner.classList.add("hidden");
             profileImage.classList.remove("hidden");
             profileImage.src = profileImageURL;
         } catch (error) {
             loadingSpinner.classList.add("hidden");
             profileIcon.classList.remove("hidden");
             console.error('Error uploading file:', error);
+            alert('Error uploading file: ' + error.message);
         }
     }
 });
@@ -73,28 +72,32 @@ async function createUserAccount() {
         userEmail.value !== "" &&
         userPassword.value !== "") {
         try {
-            signUpBtn.innerText = "Account Creating...";
+            signUpBtn.innerText = "Creating Account...";
             signUpBtn.disabled = true;
 
             // Create user with email and password
             const userCredential = await createUserWithEmailAndPassword(auth, userEmail.value, userPassword.value);
             const user = userCredential.user;
 
-            // Save user data to Firebase (e.g., Firestore) including profile image URL
+            // Save user data to Firestore including profile image URL
             const userFullName = `${userFirstName.value} ${userLastName.value}`;
-            console.log(userFirstName.value);
 
-            // Optionally save user details to Firestore or other database
-            await setDoc(doc(db, "users", user.uid), {
+            const userDoc = {
                 fullName: userFullName,
                 email: userEmail.value,
                 profileImageURL: profileImageURL
-            });
-            console.log("kiaa heay Yarrr!")
+            };
+
+            console.log("User data to save:", userDoc);
+
+            await setDoc(doc(db, "users", user.uid), userDoc);
+
+            console.log("User document successfully written!");
 
             window.location.href = "../../Authencation/For Login/login.html";
         } catch (error) {
-            alert("Error In making Account: " + error.message);
+            console.error("Error writing document:", error);
+            alert("Error creating account: " + error.message);
 
             userFirstName.value = "";
             userLastName.value = "";
@@ -110,9 +113,6 @@ async function createUserAccount() {
 }
 
 
-
-
-
 // Handle Google Sign-In
 googleSignUp.addEventListener("click", signUpWithGoogle);
 
@@ -126,7 +126,8 @@ async function signUpWithGoogle() {
         console.log('User:', user);
         console.log('Token:', token);
 
+        // Optionally redirect to another page or save user data to Firestore here
     } catch (error) {
-        alert(`Error: ${error.message}`);
+        alert(`Error signing in with Google: ${error.message}`);
     }
 }
