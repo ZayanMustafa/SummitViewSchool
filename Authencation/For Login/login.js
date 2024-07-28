@@ -14,6 +14,9 @@ logInBtn.addEventListener("click" , signIn)
 function signIn (){
   signInWithEmailAndPassword(auth, email.value, password.value)
   .then((userCredential) => {
+      logInBtn.innerText = 'Loading...'
+      logInBtn.disable = true
+
       if(email.value === "admin@gmail.com"){
       window.location.href = "../../Admin/admin.html";
       }else {
@@ -25,5 +28,10 @@ function signIn (){
     const errorCode = error.code;
     const errorMessage = error.message;
     alert(errorMessage)
+
+    
+    logInBtn.innerText = 'Login'
+    logInBtn.disable = false
+
   });
 }
