@@ -13,3 +13,5 @@ document.getElementById('logOutBtn').addEventListener('click', () => {
     });
 });
 
+const name = document.getElementById("studentName")
+name.innerHTML = ""

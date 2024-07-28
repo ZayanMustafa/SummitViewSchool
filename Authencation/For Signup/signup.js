@@ -19,15 +19,13 @@ import {
   
   async function createUserAccount() {
       try {
-          // Create user with email and password
-          const userCredential = await createUserWithEmailAndPassword(auth, userEmail.value, userPassword.value);
-          
-          // Signed up successfully
-          const user = userCredential.user;
-          console.log("User Created");
-  
-          // Redirect to login page
-          window.location.href = "../../Authencation/For Login/login.html";
+        
+         signUpBtn.innerText = "Account Creating...";
+         signUpBtn.disabled = true;        
+         
+         const userCredential = await createUserWithEmailAndPassword(auth, userEmail.value, userPassword.value);
+         const user = userCredential.user;
+         window.location.href = "../../Authencation/For Login/login.html";
       } catch (error) {
           const errorCode = error.code;
           const errorMessage = error.message;
@@ -37,7 +35,10 @@ import {
           userFirstName.value = "";
           userLastName.value = "";
           userEmail.value = "";
-          userPassword.value = ""; // Clear the password field
+          userPassword.value = "";
+
+          signUpBtn.innerText = "Sign Up";
+          signUpBtn.disabled = false;
       }
   }
   

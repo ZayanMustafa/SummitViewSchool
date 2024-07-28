@@ -1,5 +1,5 @@
 // Import necessary functions from Firebase
-import { app,getAuth ,onAuthStateChanged } from "/Firebase Auth/firebase.js";
+import { app, getAuth ,onAuthStateChanged } from "/Firebase Auth/firebase.js";
 
 
  const auth = getAuth(app);
@@ -17,6 +17,6 @@ import { app,getAuth ,onAuthStateChanged } from "/Firebase Auth/firebase.js";
       window.location.href = "../../Registered User/registeredUser.html";
     }
   } else {
-    console.log("User is not here");
+
   }
   });
