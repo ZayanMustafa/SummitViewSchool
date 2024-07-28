@@ -19,7 +19,7 @@
            doc,
            setDoc,
            addDoc,
-           getDocs } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";   
+           getDoc } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";   
 
    
 // Your web app's Firebase configuration
@@ -68,5 +68,5 @@ export {
   doc,
   setDoc,
   addDoc,
-  getDocs
+  getDoc
 };
