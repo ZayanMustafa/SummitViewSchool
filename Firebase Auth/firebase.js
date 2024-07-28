@@ -32,17 +32,17 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-
-// Initialize Firebase Auth
-const auth = getAuth(app);
-const provider = new GoogleAuthProvider();
+ const app = initializeApp(firebaseConfig);
+ const analytics = getAnalytics(app);
+ const db = getFirestore(app);
+ const auth = getAuth(app);
+ const provider = new GoogleAuthProvider();
 
 // Export Firebase services and methods
 export {
   // Authencation
   app,
+  analytics,
   getAuth,
   auth,
   provider,
@@ -58,6 +58,7 @@ export {
   uploadBytes,
   getDownloadURL,
   // DataBase
+  db,
   getFirestore,
   collection,
   addDoc,

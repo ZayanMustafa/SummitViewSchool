@@ -11,9 +11,13 @@ import {
   const userLastName = document.getElementById("lastName");
   const userEmail = document.getElementById("emailUser");
   const userPassword = document.getElementById("passwordUser");
+  const profileIcon = document.getElementById("profileIcon");
+  const profilePicture = document.getElementById("profilePicture");
   const signUpBtn = document.getElementById("signUp");
   const googleSignUp = document.getElementById("googleSignUpBtn");
   
+ 
+    
   // Event listener for the sign-up button
   signUpBtn.addEventListener("click", createUserAccount);
   
@@ -25,6 +29,10 @@ import {
          
          const userCredential = await createUserWithEmailAndPassword(auth, userEmail.value, userPassword.value);
          const user = userCredential.user;
+
+         const fullName = `${userFirstName.value} ${userLastName.value}`;
+
+
          window.location.href = "../../Authencation/For Login/login.html";
       } catch (error) {
           const errorCode = error.code;
