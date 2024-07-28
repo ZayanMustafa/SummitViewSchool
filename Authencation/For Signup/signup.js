@@ -8,6 +8,7 @@ import {
     createUserWithEmailAndPassword,
     auth,
     provider,
+    GoogleAuthProvider, 
     signInWithPopup
 } from "../../Firebase Auth/firebase.js";
 
