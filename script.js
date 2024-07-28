@@ -1,17 +1,16 @@
 // Import necessary functions from Firebase
-import { getAuth ,onAuthStateChanged } from "/Firebase Auth/firebase.js";
+import { app,getAuth ,onAuthStateChanged } from "/Firebase Auth/firebase.js";
 
 
+ const auth = getAuth(app);
+ console.log("User is not here");
 
-// Check if user is already signed in or not
-const auth = getAuth();
-console.log("AKSA")
-onAuthStateChanged( auth, (user) => {
+  // Check if user is already signed in or not
+  onAuthStateChanged(auth, (user) => {
   if (user) {
     console.log("User is here");
-    // Optional: You can access other user details here
     const uid = user.uid;
-    // Check if the user is admin
+
     if (user.email === "admin@gmail.com") {
       window.location.href = "../../Admin/admin.html";
     } else {
@@ -20,4 +19,4 @@ onAuthStateChanged( auth, (user) => {
   } else {
     console.log("User is not here");
   }
-});
+  });

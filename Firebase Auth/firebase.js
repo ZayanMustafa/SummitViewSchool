@@ -42,6 +42,8 @@ const provider = new GoogleAuthProvider();
 // Export Firebase services and methods
 export {
   // Authencation
+  app,
+  getAuth,
   auth,
   provider,
   createUserWithEmailAndPassword,
