@@ -32,14 +32,14 @@ profileContainer.addEventListener("click", () => {
 profilePicture.addEventListener("change", async (event) => {
     const file = event.target.files[0];
     if (file) {
-        const storageRef = ref(storage, 'profilePictures/' + file.name);
+        const storageRef = ref(storage, 'userProfilePictures/' + file.name);
         try {
             loadingSpinner.classList.remove("hidden");
             profileIcon.classList.add("hidden");
 
             await uploadBytes(storageRef, file);
             const downloadURL = await getDownloadURL(storageRef);
-
+            console.log(downloadURL)
             loadingSpinner.classList.add("hidden");
 
             profileImage.classList.remove("hidden");
