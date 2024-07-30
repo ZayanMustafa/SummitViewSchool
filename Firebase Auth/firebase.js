@@ -20,7 +20,7 @@
            setDoc,
            addDoc,
            getDoc
-         } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";   
+         } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js"; 
 
 
 
@@ -60,6 +60,7 @@
   onAuthStateChanged,
   signOut,
   // Storage
+  getFirestore,
   storage,
   getStorage,
   ref,
@@ -67,7 +68,6 @@
   getDownloadURL,
   // DataBase
   db,
-  getFirestore,
   collection,
   doc,
   setDoc,

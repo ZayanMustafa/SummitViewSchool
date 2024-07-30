@@ -1,19 +1,7 @@
 // Import Firebase methods and elements
-import {
-    getStorage,
-    storage,
-    ref,
-    uploadBytes,
-    getDownloadURL,
-    createUserWithEmailAndPassword,
-    auth,
-    provider,
-    GoogleAuthProvider, 
-    signInWithPopup,
-    setDoc,
-    doc, 
-    db,
-} from "../../Firebase Auth/firebase.js";
+import { auth, createUserWithEmailAndPassword, getAuth } from "../../Firebase Auth/firebase.js";
+import { setDoc, doc, db,  } from "../../Firebase Auth/firebase.js";
+
 
 // Import elements from HTML
 const userFirstName = document.getElementById("firstName");
@@ -28,32 +16,39 @@ const loadingSpinner = document.getElementById("loadingSpinner");
 const signUpBtn = document.getElementById("signUp");
 const googleSignUp = document.getElementById("googleSignUpBtn");
 
+signUpBtn.addEventListener("click", userAccountCreate);
 
-signUpBtn.addEventListener("click" , userAccountCreate )
+async function userAccountCreate() {
+  try {
+    // Get input values
+    const email = userEmail.value;
+    const password = userPassword.value;
+    const firstName = userFirstName.value;
+    const lastName = userLastName.value;
 
-async function userAccountCreate (){
+    // Create user with email and password
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    const user = userCredential.user;
 
-    try {
+    // Collect profile data, default to empty strings if undefined
+    const profileIconSrc = profileIcon ? profileIcon.src : '';
+    const profilePictureSrc = profilePicture ? profilePicture.src : '';
+    const profileImageSrc = profileImage ? profileImage.src : '';
 
-        const email = userEmail.value; // Make sure `userEmail` is defined and has a value
-        const password = document.getElementById("passwordUser").value; // Make sure this field exists and is retrieved correctly
-        const firstName = userFirstName.value; // Make sure `userFirstName` is defined and has a value
-        const lastName = userLastName.value; // Make sure `userLastName` is defined and has a value
+    // Save additional user data to Firestore
+    await setDoc(doc(db, 'UserData', user.uid), {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      profileIcon: profileIconSrc,
+      profilePicture: profilePictureSrc,
+      profileImage: profileImageSrc,
+    });
 
-        // Create user with email and password
-        const userCredential = await createUserWithEmailAndPassword(auth, userEmail.value, userPassword.value);
-        const user = userCredential.user;
-    
-        // Save additional user data to Firestore
-        await setDoc(doc(db, 'UserData', user.uid), {
-          firstName: firstName,
-          lastName: lastName,
-          email: email
-        });
-      console.log('User created and data saved:', user);
-      } catch (error) {
-        alert(error)
-        console.error('Error signing up:', error);
-      }
-    
+    console.log('User created and data saved:', user);
+    alert('User successfully created!');
+  } catch (error) {
+    console.error('Error signing up:', error);
+    alert('Error signing up: ' + error.message); // Provide user-friendly error message
+  }
 }
