@@ -19,21 +19,23 @@
            doc,
            setDoc,
            addDoc,
-           getDoc } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";   
+           getDoc
+         } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";   
 
-   
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyAkQtQsZ6VoJEfa86G_NaCPK-cmXdOv5Iw",
-  authDomain: "firsteducationlwebsite.firebaseapp.com",
-  projectId: "firsteducationlwebsite",
-  storageBucket: "firsteducationlwebsite.appspot.com",
-  messagingSenderId: "757131881060",
-  appId: "1:757131881060:web:85f54bcc57eb442ecd8d71",
-  measurementId: "G-ZV87DCV7MP"
-};
 
-// Initialize Firebase
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDKhpP37k2muOM4ulUVNnQcAgIuTKoLcFE",
+    authDomain: "summitviewschool1.firebaseapp.com",
+    projectId: "summitviewschool1",
+    storageBucket: "summitviewschool1.appspot.com",
+    messagingSenderId: "514893141429",
+    appId: "1:514893141429:web:53850a5db5f66790b5f5fc",
+    measurementId: "G-ZGS0H889B2"
+  };
+
+
+  // Initialize Firebase
  const app = initializeApp(firebaseConfig);
  const analytics = getAnalytics(app);
  const storage = getStorage(app);
@@ -41,8 +43,10 @@ const firebaseConfig = {
  const auth = getAuth(app);
  const provider = new GoogleAuthProvider();
 
-// Export Firebase services and methods
-export {
+
+
+  // Export Firebase services and methods
+  export {
   // Authencation
   app,
   analytics,
