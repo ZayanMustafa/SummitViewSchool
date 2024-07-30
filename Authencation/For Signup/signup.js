@@ -10,6 +10,9 @@ import {
     provider,
     GoogleAuthProvider, 
     signInWithPopup,
+    setDoc,
+    doc, 
+    db,
 } from "../../Firebase Auth/firebase.js";
 
 // Import elements from HTML
@@ -28,17 +31,29 @@ const googleSignUp = document.getElementById("googleSignUpBtn");
 
 signUpBtn.addEventListener("click" , userAccountCreate )
 
-function userAccountCreate (){
+async function userAccountCreate (){
 
-    createUserWithEmailAndPassword(auth, userEmail.value, userPassword.value)
-    .then((userCredential) => {
-      // User signed up
-      console.log('User signed up:', userCredential.user);
-    //   window.location.href = "../For Login/login.html"
-    alert('User Succefully make')
-        
-    })
-    .catch((error) => {
-      console.error('Error signing up:', error);
-    });
+    try {
+
+        const email = userEmail.value; // Make sure `userEmail` is defined and has a value
+        const password = document.getElementById("passwordUser").value; // Make sure this field exists and is retrieved correctly
+        const firstName = userFirstName.value; // Make sure `userFirstName` is defined and has a value
+        const lastName = userLastName.value; // Make sure `userLastName` is defined and has a value
+
+        // Create user with email and password
+        const userCredential = await createUserWithEmailAndPassword(auth, userEmail.value, userPassword.value);
+        const user = userCredential.user;
+    
+        // Save additional user data to Firestore
+        await setDoc(doc(db, 'UserData', user.uid), {
+          firstName: firstName,
+          lastName: lastName,
+          email: email
+        });
+      console.log('User created and data saved:', user);
+      } catch (error) {
+        alert(error)
+        console.error('Error signing up:', error);
+      }
+    
 }
