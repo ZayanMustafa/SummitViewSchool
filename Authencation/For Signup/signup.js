@@ -52,3 +52,10 @@ async function userAccountCreate() {
     alert('Error signing up: ' + error.message); // Provide user-friendly error message
   }
 }
+
+googleSignUp.addEventListener("click" , accountByGoogle )
+
+function accountByGoogle(){
+
+  alert("Please Wait")
+}
