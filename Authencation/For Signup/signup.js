@@ -1,5 +1,5 @@
 // Import Firebase methods and elements
-import { auth, createUserWithEmailAndPassword, getAuth } from "../../Firebase Auth/firebase.js";
+import { auth, createUserWithEmailAndPassword,  getAuth, signInWithPopup, GoogleAuthProvider , provider } from "../../Firebase Auth/firebase.js";
 import { setDoc, doc, db,  } from "../../Firebase Auth/firebase.js";
 
 
@@ -57,5 +57,25 @@ googleSignUp.addEventListener("click" , accountByGoogle )
 
 function accountByGoogle(){
 
-  alert("Please Wait")
+  signInWithPopup(auth, provider)
+  .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    // The signed-in user info.
+    const user = result.user;
+    // IdP data available using getAdditionalUserInfo(result)
+    // ...
+    window.location.href = "../../Registered User/registeredUser.html"
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.customData.email;
+    // The AuthCredential type that was used.
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+  });
+    // alert("Please Wait")
 }
