@@ -47,6 +47,7 @@ async function userAccountCreate() {
 
     console.log('User created and data saved:', user);
     alert('User successfully created!');
+    window.location.href = "../For Login/login.html"
   } catch (error) {
     console.error('Error signing up:', error);
     alert('Error signing up: ' + error.message); // Provide user-friendly error message

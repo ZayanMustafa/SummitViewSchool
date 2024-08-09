@@ -15,6 +15,6 @@
       window.location.href = "../../Registered User/registeredUser.html";
     }
   } else {
-      // Home page 
+    
   }
   });
