@@ -42,23 +42,25 @@ signUpBtn.addEventListener("click", async function() {
     const password = userPassword.value;
     const firstName = userFirstName.value;
     const lastName = userLastName.value;
-
+    signUpBtn.innerHTML = "Creating Account...";
+    
     // Create user with email and password
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
-
+    
     console.log('User created:', user);
-
+    
     // Upload the image to Firebase Storage if a file is selected
     let downloadURL = '';
     const file = profilePicture.files[0];
     if (file) {
+      const storage = getStorage();
       const storageRef = ref(storage, `profilePictures/${user.uid}-${file.name}`);
       await uploadBytes(storageRef, file);
       downloadURL = await getDownloadURL(storageRef);
       console.log('File uploaded:', downloadURL);
     }
-
+    
     // Save user data to Firestore
     await setDoc(doc(db, 'UserData', user.uid), {
       firstName: firstName,
@@ -67,10 +69,13 @@ signUpBtn.addEventListener("click", async function() {
       profileImageUrl: downloadURL,
     });
     console.log('User data saved to Firestore');
-
+    
+    // Debugging log
+    console.log('Redirecting to login page...');
+    
     // Redirect to login page
     window.location.href = "../For Login/login.html";
-
+    
   } catch (error) {
     console.error('Error signing up:', error);
     alert('Error signing up: ' + error.message);
