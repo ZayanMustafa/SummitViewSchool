@@ -43,7 +43,14 @@
  const auth = getAuth(app);
  const provider = new GoogleAuthProvider();
 
-
+console.log (
+            "App==>" , app ,  
+            "Analytic==>", analytics,
+            "Storage==>" , storage ,
+            "DataBase==>" , db ,
+            "Auth==>" , auth,
+            "Provider==>" , provider
+ )
 
   // Export Firebase services and methods
   export {

@@ -1,5 +1,5 @@
   // Import necessary functions from Firebase
-  import { app, getAuth ,onAuthStateChanged } from "/Firebase Auth/firebase.js";
+  import { uid,app, getAuth ,onAuthStateChanged } from "/Firebase Auth/firebase.js";
 
 
  const auth = getAuth(app);

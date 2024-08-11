@@ -1,8 +1,7 @@
 // Import Firebase methods and elements
-import { auth, createUserWithEmailAndPassword,  getAuth, signInWithPopup, GoogleAuthProvider , provider } from "../../Firebase Auth/firebase.js";
-import { setDoc, doc, db,  } from "../../Firebase Auth/firebase.js";
-
-
+import { auth, createUserWithEmailAndPassword } from "../../Firebase Auth/firebase.js";
+import { setDoc, doc, db , provider , GoogleAuthProvider , signInWithPopup} from "../../Firebase Auth/firebase.js";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "../../Firebase Auth/firebase.js";
 
 // Import elements from HTML
 const userFirstName = document.getElementById("firstName");
@@ -12,14 +11,31 @@ const userPassword = document.getElementById("passwordUser");
 const profileIcon = document.getElementById("profileIcon");
 const profilePicture = document.getElementById("profilePicture");
 const profileImage = document.getElementById("profileImage");
-const profileContainer = document.getElementById("profileContainer");
-const loadingSpinner = document.getElementById("loadingSpinner");
 const signUpBtn = document.getElementById("signUp");
-const googleSignUp = document.getElementById("googleSignUpBtn");
 
-signUpBtn.addEventListener("click", userAccountCreate);
+// Event listener to trigger file input click
+profileIcon.addEventListener("click", () => {
+  profilePicture.click();
+});
 
-async function userAccountCreate() {
+// Event listener for file input change
+profilePicture.addEventListener('change', function(event) {
+  const file = event.target.files[0];
+  if (file && (file.type === "image/jpeg" || file.type === "image/png")) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+          profileImage.src = e.target.result;
+          profileImage.classList.remove('hidden');
+          profileIcon.classList.add('hidden');
+      };
+      reader.readAsDataURL(file);
+  } else {
+      alert("Upload jpg or png file only!");
+  }
+});
+
+// Event listener for sign-up button
+signUpBtn.addEventListener("click", async function() {
   try {
     // Get input values
     const email = userEmail.value;
@@ -31,31 +47,65 @@ async function userAccountCreate() {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
 
-    // Collect profile data, default to empty strings if undefined
-    const profileIconSrc = profileIcon ? profileIcon.src : '';
-    const profilePictureSrc = profilePicture ? profilePicture.src : '';
-    const profileImageSrc = profileImage ? profileImage.src : '';
+    console.log('User created:', user);
 
-    // Save additional user data to Firestore
+    // Upload the image to Firebase Storage if a file is selected
+    let downloadURL = '';
+    const file = profilePicture.files[0];
+    if (file) {
+      const storageRef = ref(storage, `profilePictures/${user.uid}-${file.name}`);
+      await uploadBytes(storageRef, file);
+      downloadURL = await getDownloadURL(storageRef);
+      console.log('File uploaded:', downloadURL);
+    }
+
+    // Save user data to Firestore
     await setDoc(doc(db, 'UserData', user.uid), {
       firstName: firstName,
       lastName: lastName,
       email: email,
-      profileIcon: profileIconSrc,
-      profilePicture: profilePictureSrc,
-      profileImage: profileImageSrc,
+      profileImageUrl: downloadURL,
     });
+    console.log('User data saved to Firestore');
 
-    console.log('User created and data saved:', user);
-    alert('User successfully created!');
-    window.location.href = "../For Login/login.html"
+    // Redirect to login page
+    window.location.href = "../For Login/login.html";
+
   } catch (error) {
     console.error('Error signing up:', error);
-    alert('Error signing up: ' + error.message); // Provide user-friendly error message
+    alert('Error signing up: ' + error.message);
   }
-}
+});
 
-googleSignUp.addEventListener("click" , accountByGoogle )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.getElementById("googleSignUpBtn").addEventListener("click" , accountByGoogle )
 
 function accountByGoogle(){
 
