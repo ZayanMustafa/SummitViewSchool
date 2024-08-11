@@ -3,6 +3,7 @@ import { auth, createUserWithEmailAndPassword,  getAuth, signInWithPopup, Google
 import { setDoc, doc, db,  } from "../../Firebase Auth/firebase.js";
 
 
+
 // Import elements from HTML
 const userFirstName = document.getElementById("firstName");
 const userLastName = document.getElementById("lastName");
