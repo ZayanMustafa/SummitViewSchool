@@ -87,24 +87,6 @@ signUpBtn.addEventListener("click", async function() {
   }
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 document.getElementById("googleSignUpBtn").addEventListener("click" , accountByGoogle )
 
 function accountByGoogle(){
@@ -129,5 +111,6 @@ function accountByGoogle(){
     const credential = GoogleAuthProvider.credentialFromError(error);
     // ...
   });
-    // alert("Please Wait")
+    alert("Please Wait")
 }
+

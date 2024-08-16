@@ -62,37 +62,37 @@ console.log(
   "Realtime Database==>", database
 );
 
-// Export Firebase services and methods
-export {
-  // Authentication
-  app,
-  analytics,
-  auth,
-  provider,
-  getAuth,
-  createUserWithEmailAndPassword,
-  GoogleAuthProvider,
-  signInWithPopup,
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
-  signOut,
-  // Storage
-  getFirestore,
-  storage,
-  getStorage,
-  storageRef,
-  uploadBytes,
-  getDownloadURL,
-  // Firestore
-  db,
-  collection,
-  doc,
-  setDoc,
-  addDoc,
-  getDoc,
-  // Realtime Database
-  database,
-  getDatabase,
-  databaseRef,
-  set
-};
+  // Export Firebase services and methods
+  export {
+    // Authentication
+    app,
+    analytics,
+    auth,
+    provider,
+    getAuth,
+    createUserWithEmailAndPassword,
+    GoogleAuthProvider,
+    signInWithPopup,
+    signInWithEmailAndPassword,
+    onAuthStateChanged,
+    signOut,
+    // Storage
+    getFirestore,
+    storage,
+    getStorage,
+    storageRef,
+    uploadBytes,
+    getDownloadURL,
+    // Firestore
+    db,
+    collection,
+    doc,
+    setDoc,
+    addDoc,
+    getDoc,
+    // Realtime Database
+    database,
+    getDatabase,
+    databaseRef,
+    set
+  };
