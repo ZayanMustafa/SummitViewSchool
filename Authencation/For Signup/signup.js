@@ -42,10 +42,10 @@ signUpBtn.addEventListener("click", async function() {
     const password = userPassword.value;
     const firstName = userFirstName.value;
     const lastName = userLastName.value;
-    signUpBtn.innerHTML = "Creating Account...";
     
     // Create user with email and password
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    signUpBtn.innerHTML = "Creating Account...";
     const user = userCredential.user;
     
     console.log('User created:', user);
