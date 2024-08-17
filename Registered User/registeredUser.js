@@ -33,7 +33,7 @@ document.getElementById('logOutBtn').addEventListener('click', () => {
      const auth = getAuth();
      signOut(auth).then(() => {
 
-       confirm("Sign-out successful")
+      alert("Sign-out successful")
        window.location.href = "../index.html"
      }).catch((error) => {
       alert("Face Problem in SignOut")
