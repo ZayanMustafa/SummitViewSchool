@@ -11,10 +11,7 @@
     const uid = user.uid;
     if (user.email === "admin@gmail.com") {
       window.location.href = "../../Admin/admin.html";
-    } else {
+    } else if (user.uid !== "admin@gmail.com")
       window.location.href = "../../Registered User/registeredUser.html";
-    }
-  } else {
-    
   }
   });
