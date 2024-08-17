@@ -111,6 +111,6 @@ function accountByGoogle(){
     const credential = GoogleAuthProvider.credentialFromError(error);
     // ...
   });
-    alert("Please Wait")
+    // alert("Please Wait")
 }
 
