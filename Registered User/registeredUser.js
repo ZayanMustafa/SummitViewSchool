@@ -31,8 +31,6 @@ function displayUserData(userData) {
 // LogOut
 document.getElementById('logOutBtn').addEventListener('click', () => {
   const auth = getAuth();
-
-  // Ask for user confirmation before signing out
   const userConfirmed = confirm("Are you sure you want to sign out?");
 
   if (userConfirmed) {
