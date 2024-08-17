@@ -30,12 +30,22 @@ function displayUserData(userData) {
 
 // LogOut
 document.getElementById('logOutBtn').addEventListener('click', () => {
-     const auth = getAuth();
-     signOut(auth).then(() => {
+  const auth = getAuth();
 
-      alert("Sign-out successful")
-       window.location.href = "../index.html"
-     }).catch((error) => {
-      alert("Face Problem in SignOut")
+  // Ask for user confirmation before signing out
+  const userConfirmed = confirm("Are you sure you want to sign out?");
+
+  if (userConfirmed) {
+    signOut(auth).then(() => {
+
+      window.location.href = "../index.html";
+    }).catch((error) => {
+
+      alert("There was a problem with signing out. Please try again.");
+      console.error("Sign-out error:", error);
     });
- }); 
+  } else {
+
+    console.log("User canceled sign-out.");
+  }
+});

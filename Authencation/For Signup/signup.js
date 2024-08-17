@@ -24,12 +24,10 @@ const profilePicture = document.getElementById("profilePicture");
 const profileImage = document.getElementById("profileImage");
 const signUpBtn = document.getElementById("signUp");
 
-// Event listener to trigger file input click
 profileIcon.addEventListener("click", () => {
   profilePicture.click();
 });
 
-// Event listener for file input change
 profilePicture.addEventListener('change', function(event) {
   const file = event.target.files[0];
   if (file && (file.type === "image/jpeg" || file.type === "image/png")) {
@@ -45,10 +43,10 @@ profilePicture.addEventListener('change', function(event) {
   }
 });
 
-// Event listener for sign-up button
+// SignUp
 signUpBtn.addEventListener("click", async function() {
   try {
-    // Get input values
+
     const email = userEmail.value;
     const password = userPassword.value;
     const firstName = userFirstName.value;
@@ -68,6 +66,7 @@ signUpBtn.addEventListener("click", async function() {
     downloadURL = await getDownloadURL(storageReference);
    }
     console.log("Image Uploaded!==>" , downloadURL)
+
     // Save user data to Realtime Database
     await set(databaseRef(database, 'UserData/' + user.uid), {
       firstName: firstName,
