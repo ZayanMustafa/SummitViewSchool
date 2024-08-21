@@ -86,30 +86,70 @@ signUpBtn.addEventListener("click", async function() {
   }
 });
 
-document.getElementById("googleSignUpBtn").addEventListener("click" , accountByGoogle )
+// document.getElementById("googleSignUpBtn").addEventListener("click" , accountByGoogle )
 
-function accountByGoogle(){
+// function accountByGoogle(){
 
+//   signInWithPopup(auth, provider)
+//   .then((result) => {
+//     // This gives you a Google Access Token. You can use it to access the Google API.
+//     const credential = GoogleAuthProvider.credentialFromResult(result);
+//     const token = credential.accessToken;
+//     // The signed-in user info.
+//     const user = result.user;
+//     // IdP data available using getAdditionalUserInfo(result)
+//     // ...
+//     window.location.href = "../../Registered User/registeredUser.html"
+//   }).catch((error) => {
+//     // Handle Errors here.
+//     const errorCode = error.code;
+//     const errorMessage = error.message;
+//     // The email of the user's account used.
+//     const email = error.customData.email;
+//     // The AuthCredential type that was used.
+//     const credential = GoogleAuthProvider.credentialFromError(error);
+//     // ...
+//   });
+//     // alert("Please Wait")
+// }
+
+document.getElementById("googleSignUpBtn").addEventListener("click", accountByGoogle);
+
+function accountByGoogle() {
   signInWithPopup(auth, provider)
-  .then((result) => {
-    // This gives you a Google Access Token. You can use it to access the Google API.
-    const credential = GoogleAuthProvider.credentialFromResult(result);
-    const token = credential.accessToken;
-    // The signed-in user info.
-    const user = result.user;
-    // IdP data available using getAdditionalUserInfo(result)
-    // ...
-    window.location.href = "../../Registered User/registeredUser.html"
-  }).catch((error) => {
-    // Handle Errors here.
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // The email of the user's account used.
-    const email = error.customData.email;
-    // The AuthCredential type that was used.
-    const credential = GoogleAuthProvider.credentialFromError(error);
-    // ...
-  });
-    // alert("Please Wait")
+    .then(async (result) => {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+
+      // The signed-in user info.
+      const user = result.user;
+      
+      // Extract the user data
+      const firstName = user.displayName.split(' ')[0];
+      const lastName = user.displayName.split(' ')[1] || '';
+      const email = user.email;
+      const profileImageUrl = user.photoURL;
+
+      // Save user data to Realtime Database
+      await set(ref(database, 'UserData/' + user.uid), {
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        profileImageUrl: profileImageUrl,
+      });
+
+      // Redirect the user to the registered user page
+      window.location.href = "../../Registered User/registeredUser.html";
+    })
+    .catch((error) => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      const email = error.customData.email;
+      const credential = GoogleAuthProvider.credentialFromError(error);
+
+      console.error("Error during Google Sign-In:", errorCode, errorMessage);
+    });
 }
 
