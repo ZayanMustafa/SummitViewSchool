@@ -16,7 +16,7 @@
     flex: 0 0 300px;
     max-width: 300px;
     min-width: 250px;
-    background-color: #4aaf4a; /* Darker green for better contrast */
+    background-color: #4aaf4a; 
     color: white;
     padding: 1rem;
     display: flex;
@@ -25,12 +25,14 @@
     position: sticky;
     top: 0;
     right: 0 !important;
-    height: calc(100vh - 4rem); /* Adjust for top navbar height */
+    height: calc(100vh - 4rem); 
     overflow-y: auto;
 }
+
+/* Hide sidebar on smaller screens */
 @media (max-width: 768px) {
     .right-sidebar {
-        display: none; /* Hide sidebar on smaller screens */
+        display: none; 
     }
 }
 .bg-dark-green { background-color: #4aaf4a; }
@@ -47,5 +49,5 @@
     font-size: 1.5rem;
 }
 .hover\:text-gold:hover {
-      color: #FFD700; /* Replace with your gold color */
+      color: #FFD700; 
     }
