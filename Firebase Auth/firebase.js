@@ -35,7 +35,7 @@ import {
 const firebaseConfig = {
   apiKey: "AIzaSyCfq5jMywCUO-sNrFqkzVe0_zpQxx4YWOM",
   authDomain: "some-projects-of-zayyan.firebaseapp.com",
-  databaseurl: "https://some-projects-of-zayyan-default-rtdb.firebaseio.com/",
+  databaseurl: "https://some-projects-of-zayyan-default-rtdb.asia-southeast1.firebaseio.com/",
   projectId: "some-projects-of-zayyan",
   storageBucket: "some-projects-of-zayyan.appspot.com",
   messagingSenderId: "940547270190",
