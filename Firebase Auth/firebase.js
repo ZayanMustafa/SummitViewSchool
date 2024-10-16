@@ -33,16 +33,15 @@ import {
 
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDKhpP37k2muOM4ulUVNnQcAgIuTKoLcFE",
-  authDomain: "summitviewschool1.firebaseapp.com",
-  databaseURL: "https://summitviewschool1-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "summitviewschool1",
-  storageBucket: "summitviewschool1.appspot.com",
-  messagingSenderId: "514893141429",
-  appId: "1:514893141429:web:53850a5db5f66790b5f5fc",
-  measurementId: "G-ZGS0H889B2"
+  apiKey: "AIzaSyCfq5jMywCUO-sNrFqkzVe0_zpQxx4YWOM",
+  authDomain: "some-projects-of-zayyan.firebaseapp.com",
+  databaseurl: "https://some-projects-of-zayyan-default-rtdb.firebaseio.com/",
+  projectId: "some-projects-of-zayyan",
+  storageBucket: "some-projects-of-zayyan.appspot.com",
+  messagingSenderId: "940547270190",
+  appId: "1:940547270190:web:3b31458c19bb69e5f221bf",
+  measurementId: "G-02SBWE9GNE"
 };
-
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -52,7 +51,8 @@ const db = getFirestore(app);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 const database = getDatabase(app);
-
+  // Log Firebase services and methods to the console for debugging purposes
+ // Note: You should not log sensitive information like API keys and secrets in a production environment.  Instead, consider using environment variables or secure configuration storag
 console.log(
   "App==>", app,
   "Analytics==>", analytics,

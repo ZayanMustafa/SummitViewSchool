@@ -15,7 +15,7 @@ onAuthStateChanged(auth, (user) => {
          displayUserData(userData)
         }
       })
-      .catch((error) => {
+      .catch((error) => { 
         console.error("Error fetching user data:", error);
         onAuthStateChanged()
       });

@@ -14,4 +14,4 @@
     } else if (user.uid !== "admin@gmail.com")
       window.location.href = "../../Registered User/registeredUser.html";
   }
-  });
+  });  

@@ -1,0 +1,10 @@
+{
+    "hosting": {
+      "site": "summitview",
+    "public": "public",
+      "ignore": [
+        "**/.*",
+        "**/node_modules/**"
+      ]
+    }
+  }

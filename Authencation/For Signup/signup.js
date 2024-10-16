@@ -12,7 +12,7 @@ import {
   database, 
   databaseRef, 
   set ,
-  
+   
 } from "../../Firebase Auth/firebase.js";
 
 // Import elements from HTML

@@ -10,7 +10,7 @@ const logInBtn = document.getElementById("loginBtn")
 // SignIn user with email and Password Btn Funcation 
 
 logInBtn.addEventListener("click" , signIn)
-
+ 
 function signIn (){
   signInWithEmailAndPassword(auth, email.value, password.value)
   .then((userCredential) => {
