@@ -63,7 +63,11 @@ console.log(
   "Realtime Database==>", database
 );
 
-  // Export Firebase services and methods
+if (typeof window !== 'undefined') {
+  const analytics = getAnalytics(app);
+}
+
+// Export Firebase services and methods
   export {
     // Authentication
     app,
